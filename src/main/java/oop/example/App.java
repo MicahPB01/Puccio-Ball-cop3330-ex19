@@ -1,19 +1,26 @@
 package oop.example;
 
+/*
+ *  UCF COP3330 Summer 2021 Assignment 1 Solution
+ *  Copyright 2021 Micah Puccio-Ball
+ */
+
 import java.util.Scanner;
 
 public class App 
 {
     public static void main( String[] args )
     {
+        App myApp = new App();
+
         double weight;
         double height;
         double BMI;
 
         System.out.print("What is your weight in pounds? ");
-        weight = userInput();
+        weight = myApp.userInput();
         System.out.print("What is your height in inches? ");
-        height = userInput();
+        height = myApp.userInput();
 
         BMI = (weight / (height * height)) * 703;
 
@@ -32,7 +39,7 @@ public class App
     }
 
 
-    public static double userInput()  {
+    public double userInput()  {
         Scanner input = new Scanner(System.in);
         try   {
             return Double.parseDouble(input.nextLine());
